@@ -1,0 +1,150 @@
+:root {
+  --fontM: "Prompt";
+  --BGclr: #84a1ec;
+  --BOXclr: #f11a7b;
+  --circle: #02f0ff;
+  --black: #000;
+  --white: #fff;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: var(--BGclr);
+  width: 100%;
+  height: 100vh;
+}
+
+.navbar > .container {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 1.5rem;
+}
+
+main {
+  margin-top: 25px;
+}
+
+.container > .t-w {
+  margin: auto 5px;
+}
+
+.container > div > .navbar-text {
+  font-style: var(--fontM);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.container > div > img {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.active {
+  border-bottom: 1px solid var(--white);
+}
+
+.active > .today {
+  color: var(--white);
+}
+
+.active > .work {
+  color: var(--white);
+}
+
+.todo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+
+.header-box {
+  width: 400px;
+  background-color: var(--BOXclr);
+  color: var(--white);
+  border-radius: 11px;
+  padding: 2px 8px;
+  box-shadow: 2px 2px 5px 2px grey;
+}
+
+.header-box > h1 {
+  font-size: 1.9rem;
+  text-align: center;
+  font-style: var(--fontM);
+}
+
+.task-section {
+  width: 400px;
+  background-color: var(--white);
+  margin-top: 12px;
+  padding: 15px;
+  position: relative;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+.task-list {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.247);
+  padding: 5px;
+  display: flex;
+}
+
+.para {
+  margin-left: 8px;
+  margin-top: 10px;
+  width: 80%;
+}
+
+input:checked + p {
+  text-decoration: line-through;
+}
+
+#check {
+  margin-top: 14px;
+  height: 15px;
+}
+
+form {
+  margin-top: 15px;
+}
+
+form > #text {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000;
+  width: 90%;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  width: 38px;
+  height: 38px;
+  background-color: var(--circle);
+  border-radius: 19px;
+}
+
+.addIcon {
+  width: 20px;
+  filter: invert(100%);
+  position: absolute;
+  right: 19px;
+  bottom: 13px;
+  z-index: 10;
+  cursor: pointer;
+}

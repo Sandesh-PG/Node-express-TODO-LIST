@@ -1,0 +1,38 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+  <!-- As a link -->
+  <nav class="navbar bg-body-transparent">
+    <div class="container">
+      <div class="t-w active">
+        <img src="/images/whiteCalender.png" alt="" />
+        <a class="navbar-text today" href="/">TODAY</a>
+      </div>
+      <div class="t-w">
+        <img src="/images/cloneBlack.png" alt="" />
+        <a class="navbar-text work" href="/work">WORK</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="todo-section">
+      <div class="header-box">
+        <% if(locals.DAY && locals.MONTH && locals.YEAR ) {%>
+        <h1><%= DAY %>, <%= MONTH %> <%= YEAR %></h1>
+        <% } else {%>
+        <h1>Current Day,date,year</h1>
+        <% } %>
+      </div>
+      <div class="task-section">
+        <% if(locals.tasks){ %> <%- include("partials/todayTasks.ejs") %> <% }
+        %>
+        <form action="/add-today" method="POST">
+          <input type="text" name="task" id="text" placeholder="NEW ITEM" />
+          <button class="circle" type="submit">
+            <img src="/images/plus.png" alt="icon" class="addIcon" />
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>

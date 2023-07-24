@@ -1,0 +1,35 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+  <!-- As a link -->
+  <nav class="navbar bg-body-transparent">
+    <div class="container">
+      <div class="t-w">
+        <img src="/images/BlackCalender.png" alt="" />
+        <a class="navbar-text today" href="/">TODAY</a>
+      </div>
+      <div class="t-w active">
+        <img src="/images/cloneWhite.png" alt="" />
+        <a class="navbar-text work" href="/work">WORK</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container todo-section">
+      <div class="header-box">
+        <h1>Work Day</h1>
+      </div>
+      <div class="task-section">
+        <% if(locals.taskwork){ %> <%- include("partials/workTasks.ejs") %> <% }
+        %>
+        <form action="/add-work" method="POST">
+          <input type="text" name="task1" id="text" placeholder="NEW ITEM" />
+          <button class="circle" type="submit">
+            <img src="/images/plus.png" alt="icon" class="addIcon" />
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
